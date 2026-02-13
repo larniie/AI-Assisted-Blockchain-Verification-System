@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Assisted Blockchain Certificate Verification</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="hero card">
+      <div>
+        <p class="eyebrow">AI + Blockchain Security</p>
+        <h1>Certificate Verification Studio</h1>
+        <p class="subtitle">Issue, verify, and inspect certificates with AI-assisted risk insights.</p>
+      </div>
+      <div class="status-chip" id="apiStatus">API: Ready</div>
+    </header>
+
+    <section class="grid stats-grid">
+      <article class="stat card">
+        <p>Chain Length</p>
+        <h3 id="chainLength">-</h3>
+      </article>
+      <article class="stat card">
+        <p>Chain Integrity</p>
+        <h3 id="chainValid">-</h3>
+      </article>
+      <article class="stat card">
+        <p>Pending Certs</p>
+        <h3 id="pendingCount">-</h3>
+      </article>
+    </section>
+
+    <section class="grid two-col">
+      <section class="card">
+        <h2>API Settings</h2>
+        <label for="modeSelect">Mode</label>
+        <select id="modeSelect">
+          <option value="online">Online (Backend API)</option>
+          <option value="offline">Offline Demo (No API)</option>
+        </select>
+        <label for="baseUrl">Backend URL</label>
+        <input id="baseUrl" type="text" value="http://127.0.0.1:5000" />
+        <div class="api-actions">
+          <button id="testApiBtn" type="button">Test Connection</button>
+          <button id="saveApiBtn" type="button">Save URL</button>
+          <button id="resetApiBtn" type="button">Reset Default</button>
+        </div>
+        <p class="muted">Tip: API URL is saved in your browser.</p>
+      </section>
+
+      <section class="card ai-panel">
+        <h2>AI Assistant Insights</h2>
+        <p id="aiSummary" class="muted">No analysis yet. Verify a certificate to generate AI insights.</p>
+        <div class="ai-metrics">
+          <div>
+            <span>Confidence</span>
+            <strong id="aiConfidence">-</strong>
+          </div>
+          <div>
+            <span>Risk</span>
+            <strong id="aiRisk">-</strong>
+          </div>
+        </div>
+        <ul id="aiRecommendations"></ul>
+      </section>
+    </section>
+
+    <section class="grid two-col">
+      <section class="card">
+        <h2>Issue Certificate</h2>
+        <textarea id="issueText" rows="4" placeholder="e.g. Alice BSc Computer Science 2026"></textarea>
+        <button id="issueBtn">Issue Certificate</button>
+      </section>
+
+      <section class="card">
+        <h2>Verify Certificate</h2>
+        <textarea id="verifyText" rows="4" placeholder="Paste exact certificate text to verify"></textarea>
+        <button id="verifyBtn">Run Verification + AI Analysis</button>
+      </section>
+    </section>
+
+    <section class="card">
+      <h2>AI Help Assistant</h2>
+      <p class="muted">Ask for an explanation of any section, or get next-step guidance.</p>
+      <div class="assistant-grid">
+        <div>
+          <label for="helpTopic">Choose section</label>
+          <select id="helpTopic">
+            <option value="overview">Overview</option>
+            <option value="api-settings">API Settings</option>
+            <option value="issue-certificate">Issue Certificate</option>
+            <option value="verify-certificate">Verify Certificate</option>
+            <option value="blockchain-panel">Blockchain Panel</option>
+            <option value="ai-insights">AI Assistant Insights</option>
+            <option value="offline-mode">Offline Demo Mode</option>
+            <option value="security">Security & Production</option>
+          </select>
+        </div>
+        <div class="assistant-actions">
+          <button id="askExplainBtn" type="button">Explain Section</button>
+          <button id="askNextBtn" type="button">What should I do next?</button>
+        </div>
+      </div>
+      <pre id="assistantOutput">Ask me anything about this system.</pre>
+    </section>
+
+    <section class="card actions-row">
+      <h2>Blockchain</h2>
+      <button id="refreshChainBtn">Refresh Chain</button>
+    </section>
+
+    <section class="card">
+      <h2>System Response</h2>
+      <pre id="output">Ready.</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
