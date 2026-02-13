@@ -152,32 +152,6 @@ python Backend\cli.py chain
 
 ---
 
-## Troubleshooting
-
-### Shell Integration Unavailable
-- Use PowerShell terminal directly
-- If needed:
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-
-### Backend not reachable (connection refused)
-- Ensure backend is running:
-
-```powershell
-.\scripts\start_server.ps1
-```
-
-### Missing waitress
-- Reinstall deps:
-
-```powershell
-.\scripts\install_deps.ps1
-```
-
----
-
 ## Security Notes (Next Steps)
 
 For production readiness, add:
